@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patientes - Maternité Lumière</title>
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="patientes.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <span class="navbar-brand-text">Maternité Lumière</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                     <li class="nav-item">
+                        <a class="nav-link" href="index.html">Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="consultations.html">Consultations</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="patientes.html">Patientes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="calendrier.html">Calendrier</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container patient-main">
+        <div class="row mb-4">
+            <div class="col-md-6">
+                <h1 class="patient-title">Liste des Patientes</h1>
+            </div>
+            <div class="col-md-6 text-md-end">
+                <button class="btn btn-primary new-patient-btn" data-bs-toggle="modal" data-bs-target="#newPatientModal">
+                    <span>➕</span> Nouvelle patiente
+                </button>
+            </div>
+        </div>
+
+        <div class="row mb-4 filters-row">
+            <div class="col-md-4 mb-3 mb-md-0">
+                <div class="search-box">
+                    <input type="text" class="form-control" placeholder="Rechercher...">
+                    <button class="btn btn-outline-secondary" type="button">
+                        <span>🔍</span>
+                    </button>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3 mb-md-0">
+                <select class="form-select">
+                    <option selected>Trier par</option>
+                    <option>Nom (A-Z)</option>
+                    <option>Date d'inscription</option>
+                    <option>Terme de grossesse</option>
+                </select>
+            </div>
+            <div class="col-md-4">
+                <select class="form-select">
+                    <option selected>Filtrer par statut</option>
+                    <option>Toutes</option>
+                    <option>1er trimestre</option>
+                    <option>2ème trimestre</option>
+                    <option>3ème trimestre</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="row g-4 patient-cards-row">
+            <!-- Patient Card 1 -->
+            <div class="col-lg-4 col-md-6">
+                <div class="card patient-card">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-3">
+                            <h5 class="patient-name">Aminata Diallo</h5>
+                            <span class="badge third-trimester-badge">3ème trimestre</span>
+                        </div>
+                        <p class="patient-id">ID: MAT-2023-001</p>
+                        <p class="patient-info"><strong>Âge:</strong> 28 ans</p>
+                        <p class="patient-info"><strong>Dernière consultation:</strong> 15/06/2023</p>
+                        <p class="patient-info"><strong>Prochaine consultation:</strong> 30/06/2023</p>
+                        <div class="d-flex justify-content-between patient-actions">
+                            <a href="#" class="btn btn-sm btn-outline-primary">Détails</a>
+                            <a href="consultations.html" class="btn btn-sm btn-primary">Nouvelle consult.</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Patient Card 2 -->
+            <div class="col-lg-4 col-md-6">
+                <div class="card patient-card">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-3">
+                            <h5 class="patient-name">Fatou Bâ</h5>
+                            <span class="badge second-trimester-badge">2ème trimestre</span>
+                        </div>
+                        <p class="patient-id">ID: MAT-2023-002</p>
+                        <p class="patient-info"><strong>Âge:</strong> 25 ans</p>
+                        <p class="patient-info"><strong>Dernière consultation:</strong> 10/06/2023</p>
+                        <p class="patient-info"><strong>Prochaine consultation:</strong> 25/06/2023</p>
+                        <div class="d-flex justify-content-between patient-actions">
+                            <a href="#" class="btn btn-sm btn-outline-primary">Détails</a>
+                            <a href="consultations.html" class="btn btn-sm btn-primary">Nouvelle consult.</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Patient Card 3 -->
+            <div class="col-lg-4 col-md-6">
+                <div class="card patient-card">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-3">
+                            <h5 class="patient-name">Mariam Sow</h5>
+                            <span class="badge first-trimester-badge">1er trimestre</span>
+                        </div>
+                        <p class="patient-id">ID: MAT-2023-003</p>
+                        <p class="patient-info"><strong>Âge:</strong> 32 ans</p>
+                        <p class="patient-info"><strong>Dernière consultation:</strong> 05/06/2023</p>
+                        <p class="patient-info"><strong>Prochaine consultation:</strong> 20/06/2023</p>
+                        <div class="d-flex justify-content-between patient-actions">
+                            <a href="#" class="btn btn-sm btn-outline-primary">Détails</a>
+                            <a href="consultations.html" class="btn btn-sm btn-primary">Nouvelle consult.</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pagination -->
+        <nav class="mt-4 patient-pagination" aria-label="Page navigation">
+            <ul class="pagination justify-content-center">
+                <li class="page-item disabled">
+                    <a class="page-link" href="#" tabindex="-1">Précédent</a>
+                </li>
+                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item">
+                    <a class="page-link" href="#">Suivant</a>
+                </li>
+            </ul>
+        </nav>
+    </main>
+
+    <!-- New Patient Modal -->
+    <div class="modal fade" id="newPatientModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Nouvelle Patiente</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label class="form-label">Nom complet</label>
+                            <input type="text" class="form-control" required>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label class="form-label">Date de naissance</label>
+                                <input type="date" class="form-control" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Groupe sanguin</label>
+                                <select class="form-select" required>
+                                    <option value="" selected disabled>Choisir</option>
+                                    <option>A+</option>
+                                    <option>A-</option>
+                                    <option>B+</option>
+                                    <option>B-</option>
+                                    <option>AB+</option>
+                                    <option>AB-</option>
+                                    <option>O+</option>
+                                    <option>O-</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Date des dernières règles</label>
+                            <input type="date" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Antécédents médicaux</label>
+                            <textarea class="form-control" rows="3"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Enregistrer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="main-footer">
+        <div class="footer-copyright">
+                <p>&copy; 2025 by Mbalanga & Zangu & Malanda & Nshuo & Atungale.</p>
+            </div>
+    </footer>
+
+    <script src="bootstrap.min.js"></script>
+</body>
+</html>

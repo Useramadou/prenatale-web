@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultations - Maternité Lumière</title>
+     <link href="bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="consultations.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <span class="navbar-brand-text">Maternité Lumière</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                     <li class="nav-item">
+                        <a class="nav-link" href="index.html">Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="consultations.html">Consultations</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="patientes.html">Patientes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="calendrier.html">Calendrier</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container consultation-main">
+        <div class="row mb-4">
+            <div class="col">
+                <h1 class="consultation-title">Gestion des Consultations</h1>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="index.html">Accueil</a></li>
+                        <li class="breadcrumb-item active">Consultations</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-lg-5">
+                <div class="consultation-form-section">
+                    <h3 class="form-title">Nouvelle Consultation</h3>
+                    <form>
+                        <div class="mb-3">
+                            <label for="patient" class="form-label">Patiente</label>
+                            <select class="form-select" id="patient" required>
+                                <option value="" selected disabled>Choisir une patiente</option>
+                                <option value="1">Aminata Diallo (ID: MAT-2023-001)</option>
+                                <option value="2">Fatou Bâ (ID: MAT-2023-002)</option>
+                                <option value="3">Mariam Sow (ID: MAT-2023-003)</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="date" class="form-label">Date et heure</label>
+                            <input type="datetime-local" class="form-control" id="date" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="medecin" class="form-label">Médecin</label>
+                            <select class="form-select" id="medecin" required>
+                                <option value="" selected disabled>Choisir un médecin</option>
+                                <option value="1">Dr. Jean Ndoye</option>
+                                <option value="2">Dr. Awa Fall</option>
+                                <option value="3">Dr. Mamadou Diop</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="type" class="form-label">Type de consultation</label>
+                            <select class="form-select" id="type" required>
+                                <option value="" selected disabled>Choisir un type</option>
+                                <option value="1">Première visite</option>
+                                <option value="2">Visite de routine</option>
+                                <option value="3">Suivi spécialisé</option>
+                                <option value="4">Échographie</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary form-submit-btn">Enregistrer</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="col-lg-7">
+                <div class="consultation-history-card">
+                    <div class="card-header">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <h5 class="history-title">Historique des Consultations</h5>
+                            <div class="search-box">
+                                <input type="text" placeholder="Rechercher...">
+                                <button type="button">🔍</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table consultation-table">
+                                <thead>
+                                    <tr>
+                                        <th>Date</th>
+                                        <th>Patiente</th>
+                                        <th>Médecin</th>
+                                        <th>Type</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>15/06/2023</td>
+                                        <td>Aminata Diallo</td>
+                                        <td>Dr. Jean Ndoye</td>
+                                        <td>Visite de routine</td>
+                                        <td><button class="btn btn-sm btn-outline-primary">Détails</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>10/06/2023</td>
+                                        <td>Fatou Bâ</td>
+                                        <td>Dr. Awa Fall</td>
+                                        <td>Échographie</td>
+                                        <td><button class="btn btn-sm btn-outline-primary">Détails</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>05/06/2023</td>
+                                        <td>Mariam Sow</td>
+                                        <td>Dr. Mamadou Diop</td>
+                                        <td>Première visite</td>
+                                        <td><button class="btn btn-sm btn-outline-primary">Détails</button></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-copyright">
+                <p>&copy; 2025 by Mbalanga & Zangu & Malanda & Nshuo & Atungale.</p>
+        </div>
+    </footer>
+
+    <script src="bootstrap.min.js"></script>
+</body>
+</html>

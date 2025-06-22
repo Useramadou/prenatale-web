@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendrier - Maternité Lumière</title>
+     <link href="bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="calendrier.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <span class="navbar-brand-text">Maternité Lumière</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                     <li class="nav-item">
+                        <a class="nav-link" href="index.html">Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="consultations.html">Consultations</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="patientes.html">Patientes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="calendrier.html">Calendrier</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container calendar-main">
+        <div class="row mb-4">
+            <div class="col-md-8">
+                <h1 class="calendar-title">Calendrier des Consultations</h1>
+            </div>
+            <div class="col-md-4 text-md-end">
+                <div class="calendar-view-buttons">
+                    <button class="btn btn-outline-primary active">Mois</button>
+                    <button class="btn btn-outline-primary">Semaine</button>
+                    <button class="btn btn-outline-primary">Jour</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card calendar-card shadow-sm mb-4">
+            <div class="card-header calendar-header">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div class="calendar-navigation">
+                        <button class="btn btn-sm btn-light">
+                            <span>◀</span>
+                        </button>
+                        <span class="calendar-month">Juin 2023</span>
+                        <button class="btn btn-sm btn-light">
+                            <span>▶</span>
+                        </button>
+                    </div>
+                    <button class="btn btn-light new-appointment-btn" data-bs-toggle="modal" data-bs-target="#newAppointmentModal">
+                        <span>➕</span> Nouveau rendez-vous
+                    </button>
+                </div>
+            </div>
+            <div class="card-body p-0">
+                <div class="table-responsive">
+                    <table class="table calendar-table mb-0">
+                        <thead>
+                            <tr>
+                                <th class="calendar-weekday">Dimanche</th>
+                                <th class="calendar-weekday">Lundi</th>
+                                <th class="calendar-weekday">Mardi</th>
+                                <th class="calendar-weekday">Mercredi</th>
+                                <th class="calendar-weekday">Jeudi</th>
+                                <th class="calendar-weekday">Vendredi</th>
+                                <th class="calendar-weekday">Samedi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="calendar-day other-month">28</td>
+                                <td class="calendar-day other-month">29</td>
+                                <td class="calendar-day other-month">30</td>
+                                <td class="calendar-day other-month">31</td>
+                                <td class="calendar-day">1</td>
+                                <td class="calendar-day">2</td>
+                                <td class="calendar-day">3</td>
+                            </tr>
+                            <tr>
+                                <td class="calendar-day">4</td>
+                                <td class="calendar-day">5</td>
+                                <td class="calendar-day">6</td>
+                                <td class="calendar-day">7</td>
+                                <td class="calendar-day">8</td>
+                                <td class="calendar-day">9</td>
+                                <td class="calendar-day">10
+                                    <div class="calendar-event">10:00 - Fatou Bâ (Échographie)</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="calendar-day">11</td>
+                                <td class="calendar-day">12</td>
+                                <td class="calendar-day">13</td>
+                                <td class="calendar-day">14</td>
+                                <td class="calendar-day today">15
+                                    <div class="calendar-event">09:30 - Aminata Diallo (Routine)</div>
+                                </td>
+                                <td class="calendar-day">16</td>
+                                <td class="calendar-day">17</td>
+                            </tr>
+                            <tr>
+                                <td class="calendar-day">18</td>
+                                <td class="calendar-day">19</td>
+                                <td class="calendar-day">20
+                                    <div class="calendar-event">14:00 - Mariam Sow (Routine)</div>
+                                </td>
+                                <td class="calendar-day">21</td>
+                                <td class="calendar-day">22</td>
+                                <td class="calendar-day">23</td>
+                                <td class="calendar-day">24</td>
+                            </tr>
+                            <tr>
+                                <td class="calendar-day">25
+                                    <div class="calendar-event">11:00 - Fatou Bâ (Routine)</div>
+                                </td>
+                                <td class="calendar-day">26</td>
+                                <td class="calendar-day">27</td>
+                                <td class="calendar-day">28</td>
+                                <td class="calendar-day">29</td>
+                                <td class="calendar-day">30
+                                    <div class="calendar-event">10:30 - Aminata Diallo (Routine)</div>
+                                </td>
+                                <td class="calendar-day other-month">1</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="card upcoming-events-card shadow-sm">
+            <div class="card-header">
+                <h5 class="upcoming-events-title">Consultations à venir</h5>
+            </div>
+            <div class="card-body">
+                <div class="list-group">
+                    <a href="#" class="list-group-item list-group-item-action upcoming-event">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div>
+                                <h6 class="event-date">20/06/2023 - 14:00</h6>
+                                <p class="event-details">Mariam Sow - Visite de routine avec Dr. Mamadou Diop</p>
+                            </div>
+                            <span class="badge bg-primary rounded-pill event-badge">Dans 3 jours</span>
+                        </div>
+                    </a>
+                    <a href="#" class="list-group-item list-group-item-action upcoming-event">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div>
+                                <h6 class="event-date">25/06/2023 - 11:00</h6>
+                                <p class="event-details">Fatou Bâ - Visite de routine avec Dr. Awa Fall</p>
+                            </div>
+                            <span class="badge bg-primary rounded-pill event-badge">Dans 8 jours</span>
+                        </div>
+                    </a>
+                    <a href="#" class="list-group-item list-group-item-action upcoming-event">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div>
+                                <h6 class="event-date">30/06/2023 - 10:30</h6>
+                                <p class="event-details">Aminata Diallo - Visite de routine avec Dr. Jean Ndoye</p>
+                            </div>
+                            <span class="badge bg-primary rounded-pill event-badge">Dans 13 jours</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- New Appointment Modal -->
+    <div class="modal fade" id="newAppointmentModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Nouveau Rendez-vous</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label class="form-label">Patiente</label>
+                            <select class="form-select" required>
+                                <option value="" selected disabled>Choisir une patiente</option>
+                                <option>Aminata Diallo</option>
+                                <option>Fatou Bâ</option>
+                                <option>Mariam Sow</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Date et heure</label>
+                            <input type="datetime-local" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Médecin</label>
+                            <select class="form-select" required>
+                                <option value="" selected disabled>Choisir un médecin</option>
+                                <option>Dr. Jean Ndoye</option>
+                                <option>Dr. Awa Fall</option>
+                                <option>Dr. Mamadou Diop</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Type de consultation</label>
+                            <select class="form-select" required>
+                                <option value="" selected disabled>Choisir un type</option>
+                                <option>Première visite</option>
+                                <option>Visite de routine</option>
+                                <option>Suivi spécialisé</option>
+                                <option>Échographie</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Notes</label>
+                            <textarea class="form-control" rows="3"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Enregistrer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="main-footer">
+        <div class="footer-copyright">
+                <p>&copy; 2025 by Mbalanga & Zangu & Malanda & Nshuo & Atungale.</p>
+            </div>
+    </footer>
+
+    <script src="bootstrap.min.js"></script>
+</body>
+</html>
